@@ -15,10 +15,10 @@ PROMPT = """당신은 F1 전문 챗봇입니다.
 특정 라운드 기록: get_round_race
 """
 
-agent = create_react_agent(llm, tools, prompt=PROMPT)
+# agent = create_react_agent(llm, tools, prompt=PROMPT)
 
-def sanitize(text: str) -> str:
-    return text.encode('utf-8', errors='ignore').decode('utf-8')
+# def sanitize(text: str) -> str:
+#     return text.encode('utf-8', errors='ignore').decode('utf-8')
 
 def run():
     agent = create_react_agent(llm, tools, prompt=PROMPT)
