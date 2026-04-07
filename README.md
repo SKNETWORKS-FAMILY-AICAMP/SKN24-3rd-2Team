@@ -1,11 +1,12 @@
 # SK네트웍스 Family AI 캠프 24기 3차 프로젝트
-## F1을 쉽게！For every1
+## 🏎️ F1을 쉽게！For every1
 ### 1. 팀 소개
-- F5 (새로고침)
+- F5 🔃새로고침
   
 |김민준|김유진|박영훈|전윤우|최현진|
 |---|---|---|---|---|
 |(사진)|(사진)|(사진)|(사진)|(사진)|
+|테스트케이스 설계/파인튜닝/Git 전략|벡터DB/임베딩/RAG 구현|데이터 전처리/파인튜닝/모델 평가|데이터 전처리/파인튜닝/Streamlit 구현|아키텍처 설계/Agent 구현|
 | [miin-jun](https://github.com/miin-jun) | [youjin](https://github.com/shortcut-2) | [aprkaos56](https://github.com/aprkaos56) | [Yunu-Jeon](https://github.com/Yunu-Jeon) | [lifeisgoodlg](https://github.com/lifeisgoodlg) |
 
 ### 2. 프로젝트 개요
