@@ -3,10 +3,10 @@
 ### 1. 팀 소개
 - F5 🔃새로고침
   
-|김민준|김유진|박영훈|전윤우|최현진|
+| 김민준 | 김유진 | 박영훈 | 전윤우 | 최현진 |
 |---|---|---|---|---|
-|<img width="704" height="704" alt="mj" src="https://github.com/user-attachments/assets/7e55bb73-2063-4686-b9a8-72756c9e748b" />|<img width="704" height="704" alt="yj" src="https://github.com/user-attachments/assets/4014e530-ddfc-4f1f-81b9-cbb5e66f8041" />|<img width="704" height="704" alt="yh" src="https://github.com/user-attachments/assets/290ebb83-415a-4f3f-982c-e9334933887c" />|<img width="704" height="704" alt="yw" src="https://github.com/user-attachments/assets/86da3f33-7343-4b12-a4d3-1e8c7a40564e" />|<img width="704" height="704" alt="hj" src="https://github.com/user-attachments/assets/1d489a4a-8ed9-4570-859a-93ff5bc4a90e" />|
-|테스트케이스 설계/파인튜닝/Git 관리|벡터DB/임베딩/RAG 구현|데이터 전처리/파인튜닝/모델 평가|데이터 전처리/파인튜닝/Streamlit 구현|아키텍처 설계/Agent 구현|
+| <img src="https://github.com/user-attachments/assets/7e55bb73-2063-4686-b9a8-72756c9e748b" width="180" alt="mj" /> | <img src="https://github.com/user-attachments/assets/4014e530-ddfc-4f1f-81b9-cbb5e66f8041" width="180" alt="yj" /> | <img src="https://github.com/user-attachments/assets/290ebb83-415a-4f3f-982c-e9334933887c" width="180" alt="yh" /> | <img src="https://github.com/user-attachments/assets/86da3f33-7343-4b12-a4d3-1e8c7a40564e" width="180" alt="yw" /> | <img src="https://github.com/user-attachments/assets/1d489a4a-8ed9-4570-859a-93ff5bc4a90e" width="180" alt="hj" /> |
+| 테스트케이스 설계<br>파인튜닝 / Git 관리 | 벡터DB / 임베딩<br>RAG 구현 | 데이터 전처리<br>파인튜닝 / 모델 평가 | 데이터 전처리<br>파인튜닝 / Streamlit 구현 | 아키텍처 설계<br>Agent 구현 |
 | [miin-jun](https://github.com/miin-jun) | [youjin](https://github.com/shortcut-2) | [aprkaos56](https://github.com/aprkaos56) | [Yunu-Jeon](https://github.com/Yunu-Jeon) | [lifeisgoodlg](https://github.com/lifeisgoodlg) |
 
 
