@@ -21,7 +21,12 @@ SYSTEM_MSG = """# SYSTEM RULE
 -언어: 사용자는 한국어 사용자 → 참고문서는 영어이므로 입력된 한국어 질문을 영어로 번역한 후 문서에서 검색, 출력은 한국어 구어체 답변
 -사용자의 한국어 구어체의 맥락을 적절히 이해 필요
 -친절한 말투로 답변
--F1 기술 용어는 원문 그대로 사용하거나 혹은 정확하게 번역"""
+-F1 기술 용어는 원문 그대로 사용하거나 혹은 정확하게 번역
+
+- 답변 마지막에 반드시 출처를 명시하세요.
+  형식: [출처: {파일명} {조항번호}]
+  예시: [출처: section_b.md B3.2]
+"""
 
 
 # 모델 로드
@@ -43,6 +48,7 @@ def load_retriever(embedding_model):
         collection_name="f1_rules_e5",
     )
     return vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 10})
+
 
 def load_llm() -> HuggingFacePipeline:
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
@@ -76,12 +82,22 @@ def build_prompt(question: str, context: str) -> str:
         add_generation_prompt=True
     )
 
+
 # 컴포넌트 초기화
 embedding_model = load_embedding_model()
 retriever = load_retriever(embedding_model)
 llm, tokenizer = load_llm()
 translator = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 reranker = CrossEncoder("cross-encoder/mmarco-mMiniLMv2-L12-H384-v1")
+
+
+def format_docs_with_source(docs): #(추가)
+    chunks = []
+    for doc in docs:
+        source = doc.metadata.get("source", "")
+        article = doc.metadata.get("article", "")
+        chunks.append(f"[{source} {article}]\n{doc.page_content}")
+    return "\n\n".join(chunks)
 
 
 def rag_invoke(query: str) -> dict:
@@ -95,7 +111,8 @@ def rag_invoke(query: str) -> dict:
     scores = reranker.predict(pairs)
     reranked = [doc for _, doc in sorted(zip(scores, retrieved), reverse=True)]
 
-    context = "\n\n".join(doc.page_content for doc in reranked)
+    # context = "\n\n".join(doc.page_content for doc in reranked)
+    context = format_docs_with_source(reranked)
     prompt = build_prompt(query, context)
     answer = llm.invoke(prompt)
 
