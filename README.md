@@ -98,6 +98,41 @@
 
 ### 7. 수집한 데이터 및 전처리 요약
 
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/2afe17bf-9d5a-44ee-8f37-dc7a8c3e37ed" width="450" alt="data1" />
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/85d81d71-2e98-4e20-aa55-be2e57b821cc" width="450" alt="data2" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/f5ceeaf4-de67-41ce-9aa6-125039c04c87" width="450" alt="data3" />
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/d7e15075-ba65-41ea-855d-af7ae002b0ae" width="450" alt="data4" />
+    </td>
+  </tr>
+</table>
+
+<img width="1083" height="605" alt="image" src="https://github.com/user-attachments/assets/00cc105a-fd82-4f72-bbd8-6cefe9f871db" />
+
+
+
+> F1 규정: https://www.fia.com/regulation/category/110?utm_source=chatgpt.com
+
+> F1 용어: https://www.formula1.com/en/page/f1-glossary
+
+> F1 역사: https://en.wikipedia.org/wiki/History_of_Formula_One
+
+> F1 타이어: https://www.pirelli.com/tires/en-us/motorsport/f1/tires
+
+> F1 개요: https://en.wikipedia.org/wiki/Formula_One
+
+> F1 깃발: https://en.wikipedia.org/wiki/Racing_flags
+
 ### 8. DB 연동 구현 코드 (링크만)
 
 ### 9. 테스트 계획 및 결과 보고서
