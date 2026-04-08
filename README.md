@@ -175,19 +175,19 @@
 | f1_intro_wiki | 36 |
 | pirelli_f1_tires | 8 |
 | steward_decisions | 16 |
-| **총 데이터 항목 수** | **1,804** |
+| **총 데이터 항목 수** | **1,804 건** |
 
 **Finetune 데이터 개수**
 
 | 항목 | 개수 |
 |---|---:|
-| Finetune된 데이터 개수 | 15,260 |
+| Finetune된 데이터 개수 | 15,260 건 |
 
 **데이터 출처**
 
 | 출처 | url |
 |---|:---|
-| F1 규정 | https://www.fia.com/regulation/category/110?utm_source=chatgpt.com | 
+| F1 규정 | https://www.fia.com/regulation/category/110 | 
 | F1 용어 | https://www.formula1.com/en/page/f1-glossary | 
 | F1 역사 | https://en.wikipedia.org/wiki/History_of_Formula_One | 
 | F1 타이어 | https://www.pirelli.com/tires/en-us/motorsport/f1/tires | 
