@@ -1,5 +1,8 @@
 # SK네트웍스 Family AI 캠프 24기 3차 프로젝트
 ## 🏎️ F1을 쉽게！For every1
+
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/ca9539ed-dded-4755-b088-43c4e4bcb944" />
+
 ### 1. 팀 소개
   > F1에 익숙한 시선 1개와 낯선 시선 4개가 만나, 어렵고 복잡한 정보를 쉽고 친절하게 🔃새로고침하는 팀 **F5**❗
   
@@ -46,7 +49,6 @@
 
 
 ### 2. 프로젝트 개요
-<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/ca9539ed-dded-4755-b088-43c4e4bcb944" />
 
 - 프로젝트 소개
   > F1 입문자를 위해 어려운 용어와 복잡한 규정을 쉽게 설명해주는 한국어 기반 F1 전문 챗봇입니다. 사용자의 질문 의도에 따라 규정집, 용어집, 과거 기록, 라운드별 경기 정보 등을 바탕으로 적절한 답변을 제공할 수 있도록 LLM 챗봇 구현
