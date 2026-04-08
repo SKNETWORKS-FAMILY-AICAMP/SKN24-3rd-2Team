@@ -3,11 +3,36 @@
 ### 1. 팀 소개
 - F5 🔃새로고침
   
-| 김민준 | 김유진 | 박영훈 | 전윤우 | 최현진 |
-|---|---|---|---|---|
-| <img src="https://github.com/user-attachments/assets/24b9288e-5d3d-41e0-9b78-ee5214c653e3" width="180" alt="mj" /> | <img src="https://github.com/user-attachments/assets/a5cf5b01-3c93-4719-b907-b79e6e3d7ee2" width="180" alt="yj" /> | <img src="https://github.com/user-attachments/assets/a15dfb04-c7c8-4c4c-b532-68c50153ffe2" width="180" alt="yh" /> | <img src="https://github.com/user-attachments/assets/683d37b4-e6ab-4f17-a8c3-c2182adfa727" width="180" alt="yw" /> | <img src="https://github.com/user-attachments/assets/734e509a-b2b9-42c0-b1e4-fec06463391c" width="180" alt="hj" /> |
-| 테스트케이스 설계<br>파인튜닝 / Git 관리 | 벡터DB / 임베딩<br>RAG 구현 | 데이터 전처리<br>파인튜닝 / 모델 평가 | 데이터 전처리<br>파인튜닝 / Streamlit 구현 | 아키텍처 설계<br>Agent 구현 |
-| [miin-jun](https://github.com/miin-jun) | [youjin](https://github.com/shortcut-2) | [aprkaos56](https://github.com/aprkaos56) | [Yunu-Jeon](https://github.com/Yunu-Jeon) | [lifeisgoodlg](https://github.com/lifeisgoodlg) |
+<table>
+  <tr>
+    <th>김민준</th>
+    <th>김유진</th>
+    <th>박영훈</th>
+    <th>전윤우</th>
+    <th>최현진</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://github.com/user-attachments/assets/24b9288e-5d3d-41e0-9b78-ee5214c653e3" width="180" alt="mj" /></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/a5cf5b01-3c93-4719-b907-b79e6e3d7ee2" width="180" alt="yj" /></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/a15dfb04-c7c8-4c4c-b532-68c50153ffe2" width="180" alt="yh" /></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/683d37b4-e6ab-4f17-a8c3-c2182adfa727" width="180" alt="yw" /></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/734e509a-b2b9-42c0-b1e4-fec06463391c" width="180" alt="hj" /></td>
+  </tr>
+  <tr>
+    <td align="center">테스트케이스 설계<br>파인튜닝 / Git 관리</td>
+    <td align="center">벡터DB / 임베딩<br>RAG 구현</td>
+    <td align="center">데이터 전처리<br>파인튜닝 / 모델 평가</td>
+    <td align="center">데이터 전처리<br>파인튜닝 / Streamlit 구현</td>
+    <td align="center">아키텍처 설계<br>Agent 구현</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/miin-jun">miin-jun</a></td>
+    <td align="center"><a href="https://github.com/shortcut-2">youjin</a></td>
+    <td align="center"><a href="https://github.com/aprkaos56">aprkaos56</a></td>
+    <td align="center"><a href="https://github.com/Yunu-Jeon">Yunu-Jeon</a></td>
+    <td align="center"><a href="https://github.com/lifeisgoodlg">lifeisgoodlg</a></td>
+  </tr>
+</table>
 
 
 ### 2. 프로젝트 개요
