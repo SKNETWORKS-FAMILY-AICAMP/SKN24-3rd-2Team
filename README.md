@@ -93,6 +93,8 @@
 ### 5. WBS
 
 ### 6. 요구사항 명세서
+<img width="1600" height="600" alt="image" src="https://github.com/user-attachments/assets/ba3cd407-0f3e-4942-b323-a089006ea7d9" />
+<img width="1600" height="600" alt="image" src="https://github.com/user-attachments/assets/2e61fb9e-a386-40e0-9d21-7205fb4afd57" />
 
 ### 7. 수집한 데이터 및 전처리 요약
 
