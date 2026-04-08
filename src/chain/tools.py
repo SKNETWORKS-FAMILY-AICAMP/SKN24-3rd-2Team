@@ -22,7 +22,8 @@ def sanitize(obj):
 def get_live_race(query: str) -> str:
     """실시간 레이스 정보가 필요할 때 사용"""
     data = openf1.get_live_data()
-    return json.dumps(sanitize(data), ensure_ascii=False)
+    # return json.dumps(sanitize(data), ensure_ascii=False)
+    return json.dumps(data, ensure_ascii=False).encode('utf-8', errors='ignore').decode('utf-8')
 
 @tool
 def get_past_race(query: str) -> str:
@@ -35,7 +36,8 @@ def get_past_race(query: str) -> str:
         target_year = year
 
     data = ergast.get_season_data(target_year)
-    return json.dumps(sanitize(data), ensure_ascii=False)
+    # return json.dumps(sanitize(data), ensure_ascii=False)
+    return json.dumps(data, ensure_ascii=False).encode('utf-8', errors='ignore').decode('utf-8')
 
 @tool
 def get_round_race(query: str, round: int) -> str:
@@ -50,7 +52,8 @@ def get_round_race(query: str, round: int) -> str:
         target_year = year
 
     data = ergast.get_round_data(target_year, round)
-    return json.dumps(sanitize(data), ensure_ascii=False)
+    # return json.dumps(sanitize(data), ensure_ascii=False)
+    return json.dumps(data, ensure_ascii=False).encode('utf-8', errors='ignore').decode('utf-8')
 
 @tool
 def search_regulations(query: str) -> str:
