@@ -3,6 +3,8 @@ import sys
 from pathlib import Path
 
 import streamlit as st
+
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.embeddings import Embeddings
 from langchain_core.output_parsers import StrOutputParser
