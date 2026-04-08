@@ -1,12 +1,18 @@
 import os
+import sys
 from pathlib import Path
 
 import streamlit as st
 from langchain_chroma import Chroma
+from langchain_core.embeddings import Embeddings
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_huggingface import HuggingFaceEmbeddings
 
+APP_DIR = Path(__file__).resolve().parent
+REPO_ROOT = APP_DIR.parent
+
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 # =========================
 # 기본 설정
 # =========================
@@ -16,11 +22,9 @@ st.set_page_config(
     layout="centered",
 )
 
-BASE_DIR = Path(__file__).resolve().parent
-LOGO_PATH = BASE_DIR / "logo.png"
-
-# build_db.py와 맞춤
-VECTOR_DIR = "/workspace/SKN24-3rd-2Team/vectorstore/chroma_f1_e5"
+BASE_DIR = REPO_ROOT
+LOGO_PATH = APP_DIR / "logo.png"
+VECTOR_DIR = str(REPO_ROOT / "vectorstore" / "chroma_f1_e5")
 COLLECTION_NAME = "f1_rules_e5"
 TOP_K = 4
 
