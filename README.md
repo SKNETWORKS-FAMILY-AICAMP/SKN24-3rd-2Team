@@ -166,6 +166,13 @@
 
 <img width="1263" height="538" alt="image" src="https://github.com/user-attachments/assets/7ba40e16-c348-457d-8479-87d1ce6fce75" />
 
+#### ✅ 요약
+> 1. FIA 2026 F1 규정 PDF는 계층 구조를 보존하기 위해 Markdown으로 변환한 뒤, 조항(Article) 단위로 청킹하여 RAG 검색에 활용했습니다.  
+> 2. Wikipedia, 서킷, 타이어, 용어 사전 데이터는 크롤링 또는 API 수집 후, 섹션·항목 단위로 청킹하여 JSON 형태로 정리했습니다.  
+> 3. 전처리 과정에서는 빈 항목, 중복 데이터, 지나치게 짧거나 의미가 약한 본문을 제거하여 데이터 품질을 높였습니다.  
+> 4. 파인튜닝 데이터는 전처리된 규정·설명 데이터를 기반으로 QA 쌍을 생성하고, 사실 오류·불확실 표현·불필요한 문장을 필터링하여 정제했습니다.  
+> 5. 최종적으로 RAG용 데이터셋과 파인튜닝용 JSONL 데이터셋을 분리 구축하여, 검색 정확도와 답변 생성 성능을 함께 개선했습니다.
+
 </table>
   <tr>
     <td align="center" width="50%">
@@ -416,7 +423,10 @@ def save_to_chroma(chunks: list[Document]):
 
 ---
 
-## 11. 수행결과(테스트/시연 페이지)
+## 11. 수행결과
+
+<img width="2852" height="1051" alt="image" src="https://github.com/user-attachments/assets/9d7eb9a6-4dcf-45fe-b951-85dda5119800" />
+<img width="1086" height="352" alt="image" src="https://github.com/user-attachments/assets/5298f57a-41aa-4820-8090-27a6b8c7c48f" />
 
 ---
 
