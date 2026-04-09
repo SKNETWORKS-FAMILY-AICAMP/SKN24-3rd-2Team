@@ -146,7 +146,7 @@
 ---
 
 ## 6. 요구사항 명세서
-<img width="1700" height="900" alt="image" src="https://github.com/user-attachments/assets/8549e3a9-4264-44cd-9aa6-aa4b3dce82c0" />
+<img width="1700" height="900" alt="image" src="https://github.com/user-attachments/assets/57acdeb4-0b79-429f-a505-12822b60a37e" />
 
 ---
 
