@@ -327,8 +327,7 @@ def save_to_chroma(chunks: list[Document]):
 
   <img width="1328" height="303" alt="image" src="https://github.com/user-attachments/assets/d9872506-facb-4dc2-945f-0324174f297a" />
   
-  > 종합 평균: 4.05 / 5.0 (Pass 8/8)
-
+  > 종합 평균: 4.05 / 5.0 (Pass 8/8)  
   > 항목별 평균: 친절도 4.19 · 응답시간 4.0 · 정확성 3.9 · 이해 용이성 3.8
 
   > 테스트 결과, 챗봇은 **대다수의 규정 기반 질문에 대해 정확한 답변**을 제공하였으며,  
