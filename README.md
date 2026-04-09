@@ -224,7 +224,7 @@
 <summary><b>🗄️ Database Connection (build_db.py)</b></summary>
 
 > ChromaDB 연동 구현 코드 
-> 전체 코드는 [여기](https://github.com/miin-jun/SKN24-3rd-2Team/blob/main/src/retriever/build_db.py)에서 확인하실 수 있습니다.
+> 전체 코드는 [여기](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN24-3rd-2Team/blob/29dba76607d9f463d24614a69c307257749203ec/src/retriever/build_db.py)에서 확인하실 수 있습니다.
 
 ```python
 
