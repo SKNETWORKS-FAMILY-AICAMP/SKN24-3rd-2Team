@@ -120,18 +120,20 @@
 | LLM | ![google/gemma-3-12b-it](https://img.shields.io/badge/google%2Fgemma--3--12b--it-8E75B2?style=for-the-badge&logo=google-gemini&logoColor=white) ![OpenAI-gpt-4o-mini](https://img.shields.io/badge/gpt--4o--mini-412991?style=for-the-badge&logo=openai&logoColor=white) |
 | Re-ranker | ![CrossEncoder](https://img.shields.io/badge/CrossEncoder-00BFA5?style=for-the-badge&logo=scikitlearn&logoColor=white) |
 
+### ▶️ 임베딩 모델 선정 이유
+  > OpenAI 임베딩 모델(text-embedding-3-small/large) 테스트 결과, 사용자 쿼리 요청 시마다 API 비용이 발생하는 문제와 "패독", "피트레인", "피트스탑" 등 한글화된 F1 용어 인식 한계로 인해 다국어 특화 오픈소스 모델인 **intfloat/multilingual-e5-large**로 전환했습니다.  
+  > 단, 한글 쿼리의 정확한 벡터 검색을 위해 번역 단계에서는 **GPT-4o-mini**를 활용하여 비용을 최소화하면서도 번역 품질을 확보했습니다.
 
-
-###  LLM 모델 선택 이유
+### ▶️ LLM 모델 선택 이유
   > 1, 2차 테스트 결과, Qwen 계열 대비 gemma 모델이 할루시네이션이 적고, 언어 일관성 및 문장 구조가 안정적이었습니다.  
   최종적으로, 파라미터가 더 큰 **gemma-3-12b**를 선택하여 응답 품질을 높였습니다.
 
 <img width="1700" height="900" alt="image" src="https://github.com/user-attachments/assets/7fecca53-9476-46bc-acf7-8b1243301153" />
 
 
-###  임베딩 모델 선정 이유
-  > OpenAI 임베딩 모델(text-embedding-3-small/large) 테스트 결과, 사용자 쿼리 요청 시마다 API 비용이 발생하는 문제와 "패독", "피트레인", "피트스탑" 등 한글화된 F1 용어 인식 한계로 인해 다국어 특화 오픈소스 모델인 **intfloat/multilingual-e5-large**로 전환했습니다.  
-  > 단, 한글 쿼리의 정확한 벡터 검색을 위해 번역 단계에서는 **GPT-4o-mini**를 활용하여 비용을 최소화하면서도 번역 품질을 확보했습니다.
+### ▶️ 리랭커 모델 선정 이유
+  > 벡터 검색만으로는 의미적으로 유사하지만 실제로는 관련 없는 문서가 상위에 올라오는 경우가 있어, 검색 정확도를 높이기 위해 리랭킹 단계를 추가했습니다.  
+  > cross-encoder/mmarco-mMiniLMv2-L12-H384-v1은 14개 언어로 번역된 MS MARCO 데이터셋으로 학습된 다국어 크로스 인코더 모델로, 영어로 번역된 쿼리와 F1 문서 간의 유사도를 정밀하게 재정렬하는 데 적합합니다. 오픈소스로 추가 비용 없이 사용 가능한 점도 선택 이유 중 하나입니다.
 
 ---
 
