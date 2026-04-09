@@ -199,7 +199,7 @@ else:
     st.markdown('<div class="small-fallback">For every1</div>', unsafe_allow_html=True)
 
 st.markdown(
-    '<div class="logo-title">F1을 쉽게 이해하게 하는 대화형 챗봇 </div>',
+    '<div class="logo-title">F1, 당신도 이해할 수 있습니다! </div>',
     unsafe_allow_html=True
 )
 st.markdown('</div>', unsafe_allow_html=True)
@@ -226,6 +226,6 @@ for msg in st.session_state.messages:
 # =========================
 # 입력
 # =========================
-if prompt := st.chat_input("예: 트랙 리밋은 언제 페널티가 돼?"):
+if prompt := st.chat_input("예: 트랙 리밋은 언제 패널티가 돼?"):
     handle_prompt(prompt)
     st.rerun()
