@@ -311,6 +311,11 @@ def save_to_chroma(chunks: list[Document]):
 
 <img width="766" height="548" alt="image" src="https://github.com/user-attachments/assets/295fe45d-fa1a-43de-bf2a-fda880512fa1" />
 
+> 모델 평가는 **BERTScore**, **ROUGE-L**, **Perplexity**를 사용하여 각각 의미 유사도, 표현 유사도, 문장 자연스러움을 함께 확인했습니다.  
+> 평가 결과, 파인튜닝 모델은 **BERTScore에서 통계적으로 유의미한 향상**을 보여 의미적 답변 품질이 개선된 것으로 확인되었습니다.  
+> 반면 **ROUGE-L**과 **Perplexity**에서는 유의미한 차이가 크지 않아, 표현 유사도와 유창성 측면의 개선은 제한적이었습니다.  
+> 따라서 본 프로젝트에서는 **의미 정확도가 중요한 질의에 대해 파인튜닝 모델을 우선적으로 활용하는 것이 적절하다**고 판단했습니다.
+
 
 ### ✅ 테스트 결과
 
