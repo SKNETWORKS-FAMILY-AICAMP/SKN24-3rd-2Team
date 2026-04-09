@@ -311,13 +311,6 @@ def save_to_chroma(chunks: list[Document]):
 
 `평가는 각 문항별로 수동 검토 방식으로 진행하였으며, 필요 시 원문 규정과 대조하여 사실 여부를 재확인하였습니다.`
 
-<img width="766" height="548" alt="image" src="https://github.com/user-attachments/assets/295fe45d-fa1a-43de-bf2a-fda880512fa1" />
-
-> 모델 평가는 **BERTScore**, **ROUGE-L**, **Perplexity**를 사용하여 각각 의미 유사도, 표현 유사도, 문장 자연스러움을 함께 확인했습니다.  
-> 평가 결과, 파인튜닝 모델은 **BERTScore에서 통계적으로 유의미한 향상**을 보여 의미적 답변 품질이 개선된 것으로 확인되었습니다.  
-> 반면 **ROUGE-L**과 **Perplexity**에서는 유의미한 차이가 크지 않아, 표현 유사도와 유창성 측면의 개선은 제한적이었습니다.  
-> 따라서 본 프로젝트에서는 **의미 정확도가 중요한 질의에 대해 파인튜닝 모델을 우선적으로 활용하는 것이 적절하다**고 판단했습니다.
-
 
 ### ✅ 테스트 진행 과정 및 결과
   > 1. 평가자: F1 비경험자 3인 (일반 사용자 관점)  
@@ -327,7 +320,8 @@ def save_to_chroma(chunks: list[Document]):
 
   <img width="1328" height="303" alt="image" src="https://github.com/user-attachments/assets/d9872506-facb-4dc2-945f-0324174f297a" />
   
-  > 종합 평균: 4.05 / 5.0 (Pass 8/8)  
+  > 종합 평균: 4.05 / 5.0 (Pass 8/8)
+
   > 항목별 평균: 친절도 4.19 · 응답시간 4.0 · 정확성 3.9 · 이해 용이성 3.8
 
   > 테스트 결과, 챗봇은 **대다수의 규정 기반 질문에 대해 정확한 답변**을 제공하였으며,  
@@ -402,10 +396,24 @@ def save_to_chroma(chunks: list[Document]):
 ```
 
 ### 2. 파인 튜닝
+
 - **Problem:**
-  > 규정집 원문만 검색할 경우 질문과 직접 관련 없는 조항이 함께 검색되어, 답변 정확도가 떨어지는 문제가 있었습니다. 또한, 실제 사용자는 규정 문장을 그대로 입력하기보다 일상적인 표현으로 질문하는 경우가 많아, 단순 유사도 검색만으로는 관련 조항을 정확히 찾기 어려웠습니다.
+  > 규정집 원문만 기반으로 검색할 경우, 질문과 직접 관련 없는 조항이 함께 검색되거나 사용자의 일상적인 질문 표현과 규정 문장 사이의 차이로 인해 관련 조항을 정확히 찾기 어려운 문제가 있었습니다. 그 결과, 단순 유사도 검색만으로는 답변 정확도가 떨어질 수 있었습니다.
+
 - **Solution:**
-  > 이를 보완하기 위해 실제 사용자 관점에서 자주 나올 수 있는 규정 기반 질문-답변 데이터를 직접 구축하고, 조항별 핵심 내용을 실제 사용자 질문 형태로 변환한 뒤 중복·불명확 샘플을 필터링하여 학습 데이터를 정제했습니다.
+  > 이를 보완하기 위해 실제 사용자 관점에서 자주 나올 수 있는 규정 기반 질문-답변 데이터를 직접 구축했습니다. 조항별 핵심 내용을 자연스러운 사용자 질문 형태로 변환하고, 중복되거나 불명확한 샘플은 필터링해 학습 데이터를 정제했습니다.  
+  > 이후 QLoRA 기반 파인튜닝을 적용하여, 모델이 일상적인 표현의 질문도 규정 문맥에 맞게 해석하고 보다 정확하고 이해하기 쉬운 답변을 생성할 수 있도록 개선했습니다.
+
+**▶️ Finetune 데이터 개수**
+| 항목 | 개수 |
+|---|---:|
+| section_a_general_provisions + section_b_sporting | 3,502 |
+| section_c_technical | 4,115 |
+| section_d_financial_f1_teams + section_f_operational| 895 |
+| f1_glossary + f1_history_wiki | 1,570 |
+| f1_flags + pirelli_f1_tires + f1_intro | 1,449 |
+| jolpi_ca | 3,729 |
+| **Finetune 데이터 개수** | **15,260** |
 
 ```
 {"messages": [{"role": "user", "content": "경기가 최소 몇 대의 F1 차량이 있어야 정상적으로 진행될 수 있나요?"}, {"role": "assistant", "content": "경기는 최소 12대 이상의 F1 차량이 있어야 진행할 수 있습니다. 12대 미만이면 경기가 연기되거나 취소될 수 있습니다."}]}
@@ -415,11 +423,15 @@ def save_to_chroma(chunks: list[Document]):
 {"messages": [{"role": "user", "content": "만약 경기가 연기된다면 어떤 상황에서 그럴 가능성이 높나요?"}, {"role": "assistant", "content": "차량이 12대 미만으로 부족하거나 ISC가 정한 다른 특별한 이유가 있을 때 경기가 연기될 수 있습니다."}]}
 {"messages": [{"role": "user", "content": "경기 취소와 연기, 둘 중 하나만 가능합니까?"}, {"role": "assistant", "content": "두 가지 모두 가능합니다. 상황에 따라 국제 스포츠 규정에 의거해 경기 연기 또는 취소가 결정됩니다."}]}
 ```
-  
-- **Problem:**
-  > 사용자의 질문은 규정집 문장 그대로가 아니라 일상적인 표현으로 입력되는 경우가 많아, 단순 검색만으로는 관련 조항을 정확히 찾기 어려운 문제가 있었습니다.
-- **Solution:**
-  > 이를 해결하기 위해 규정 기반 질문-답변 데이터를 활용해 모델을 파인튜닝함으로써, 자연스러운 사용자 질문에도 보다 적절한 답변을 생성할 수 있도록 개선했습니다. 이후, QLoRA 기반 파인튜닝을 적용해 모델이 자연스러운 질문도 규정 문맥에 맞게 해석하고, 보다 정확하고 이해하기 쉬운 답변을 생성할 수 있도록 개선했습니다.
+
+### ▶️ Base 모델 vs Finetuned Gemma3-12B 모델 비교
+
+<img width="766" height="548" alt="image" src="https://github.com/user-attachments/assets/295fe45d-fa1a-43de-bf2a-fda880512fa1" />
+
+> 모델 평가는 **BERTScore**, **ROUGE-L**, **Perplexity**를 사용하여 각각 의미 유사도, 표현 유사도, 문장 자연스러움을 함께 확인했습니다.  
+> 평가 결과, 파인튜닝 모델은 **BERTScore에서 통계적으로 유의미한 향상**을 보여 의미적 답변 품질이 개선된 것으로 확인되었습니다.  
+> 반면 **ROUGE-L**과 **Perplexity**에서는 유의미한 차이가 크지 않아, 표현 유사도와 유창성 측면의 개선은 제한적이었습니다.  
+> 따라서 본 프로젝트에서는 **의미 정확도가 중요한 질의에 대해 파인튜닝 모델을 우선적으로 활용하는 것이 적절하다**고 판단했습니다.
 
 #### ▶️ 링크 : [HuggingFace](https://huggingface.co/YHPark0208/SKN24_3rd_2Team)
 
@@ -433,17 +445,6 @@ def save_to_chroma(chunks: list[Document]):
     </td>
   </tr>
 </table>
-
-**Finetune 데이터 개수**
-| 항목 | 개수 |
-|---|---:|
-| section_a_general_provisions + section_b_sporting | 3,502 |
-| section_c_technical | 4,115 |
-| section_d_financial_f1_teams + section_f_operational| 895 |
-| f1_glossary + f1_history_wiki | 1,570 |
-| f1_flags + pirelli_f1_tires + f1_intro | 1,449 |
-| jolpi_ca | 3,729 |
-| **Finetune 데이터 개수** | **15,260** |
 
 ---
 
