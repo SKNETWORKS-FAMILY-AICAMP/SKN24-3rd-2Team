@@ -10,3 +10,11 @@ langchain-openai
 sentence-transformers
 torch
 transformers
+streamlit
+peft
+bitsandbytes
+fastapi
+uvicorn
+sentencepiece
+safetensors
+openai
